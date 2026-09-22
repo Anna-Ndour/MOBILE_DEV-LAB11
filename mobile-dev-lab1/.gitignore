@@ -1,0 +1,87 @@
+add 'mobile-dev-lab1/.claude/settings.json'
+add 'mobile-dev-lab1/.gitignore'
+add 'mobile-dev-lab1/.vscode/extensions.json'
+add 'mobile-dev-lab1/.vscode/settings.json'
+add 'mobile-dev-lab1/AGENTS.md'
+add 'mobile-dev-lab1/CLAUDE.md'
+add 'mobile-dev-lab1/LICENSE'
+add 'mobile-dev-lab1/README.md'
+add 'mobile-dev-lab1/app.json'
+add 'mobile-dev-lab1/assets/expo.icon/Assets/expo-symbol 2.svg'
+add 'mobile-dev-lab1/assets/expo.icon/Assets/grid.png'
+add 'mobile-dev-lab1/assets/expo.icon/icon.json'
+add 'mobile-dev-lab1/assets/images/android-icon-background.png'
+add 'mobile-dev-lab1/assets/images/android-icon-foreground.png'
+add 'mobile-dev-lab1/assets/images/android-icon-monochrome.png'
+add 'mobile-dev-lab1/assets/images/expo-badge-white.png'
+add 'mobile-dev-lab1/assets/images/expo-badge.png'
+add 'mobile-dev-lab1/assets/images/expo-logo.png'
+add 'mobile-dev-lab1/assets/images/favicon.png'
+add 'mobile-dev-lab1/assets/images/icon.png'
+add 'mobile-dev-lab1/assets/images/logo-glow.png'
+add 'mobile-dev-lab1/assets/images/react-logo.png'
+add 'mobile-dev-lab1/assets/images/react-logo@2x.png'
+add 'mobile-dev-lab1/assets/images/react-logo@3x.png'
+add 'mobile-dev-lab1/assets/images/splash-icon.png'
+add 'mobile-dev-lab1/assets/images/tabIcons/explore.png'
+add 'mobile-dev-lab1/assets/images/tabIcons/explore@2x.png'
+add 'mobile-dev-lab1/assets/images/tabIcons/explore@3x.png'
+add 'mobile-dev-lab1/assets/images/tabIcons/home.png'
+add 'mobile-dev-lab1/assets/images/tabIcons/home@2x.png'
+add 'mobile-dev-lab1/assets/images/tabIcons/home@3x.png'
+add 'mobile-dev-lab1/assets/images/tutorial-web.png'
+add 'mobile-dev-lab1/package-lock.json'
+add 'mobile-dev-lab1/package.json'
+add 'mobile-dev-lab1/scripts/reset-project.js'
+add 'mobile-dev-lab1/src/app/_layout.tsx'
+add 'mobile-dev-lab1/src/app/explore.tsx'
+add 'mobile-dev-lab1/src/app/index.tsx'
+add 'mobile-dev-lab1/src/components/animated-icon.module.css'
+add 'mobile-dev-lab1/src/components/animated-icon.tsx'
+add 'mobile-dev-lab1/src/components/animated-icon.web.tsx'
+add 'mobile-dev-lab1/src/components/app-tabs.tsx'
+add 'mobile-dev-lab1/src/components/app-tabs.web.tsx'
+add 'mobile-dev-lab1/src/components/external-link.tsx'
+add 'mobile-dev-lab1/src/components/hint-row.tsx'
+add 'mobile-dev-lab1/src/components/themed-text.tsx'
+add 'mobile-dev-lab1/src/components/themed-view.tsx'
+add 'mobile-dev-lab1/src/components/ui/collapsible.tsx'
+add 'mobile-dev-lab1/src/components/web-badge.tsx'
+add 'mobile-dev-lab1/src/constants/theme.ts'
+add 'mobile-dev-lab1/src/global.css'
+add 'mobile-dev-lab1/src/hooks/use-color-scheme.ts'
+add 'mobile-dev-lab1/src/hooks/use-color-scheme.web.ts'
+add 'mobile-dev-lab1/src/hooks/use-theme.ts'
+add 'mobile-dev-lab1/tsconfig.json'
+
+# Dependencies
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# AI/code-assistant files
+.claude/
+AGENTS.md
+CLAUDE.md
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
