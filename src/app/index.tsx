@@ -2,7 +2,7 @@ import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
+  FlatList,
   TextInput,
   Pressable,
 } from "react-native";
@@ -51,14 +51,21 @@ export default function Chat() {
         <Text style={styles.name}>Awa Diop</Text>
       </View>
 
-      <ScrollView
+      <FlatList
+        data={messages}
+        keyExtractor={(m) => m.id}
+        renderItem={({ item }) => (
+          <Bubble text={item.text} mine={item.mine} />
+        )}
+        ListEmptyComponent={
+          <Text style={styles.empty}>No messages yet. Say hello.</Text>
+        }
+        ListHeaderComponent={
+          <Text style={styles.dateLabel}>Today</Text>
+        }
         style={styles.messages}
         contentContainerStyle={{ paddingVertical: 8 }}
-      >
-        {messages.map((m) => (
-          <Bubble key={m.id} text={m.text} mine={m.mine} />
-        ))}
-      </ScrollView>
+      />
 
       <View style={styles.footer}>
         <TextInput
@@ -107,6 +114,19 @@ const styles = StyleSheet.create({
   messages: {
     flex: 1,
     backgroundColor: "#f4f4f4",
+  },
+
+  empty: {
+    textAlign: "center",
+    color: "#888",
+    paddingVertical: 32,
+  },
+
+  dateLabel: {
+    textAlign: "center",
+    color: "#888",
+    fontSize: 12,
+    paddingBottom: 8,
   },
 
   bubble: {
