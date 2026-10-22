@@ -42,7 +42,14 @@ export default function Contacts() {
           <View>
             <View style={styles.headerRow}>
               <Text style={styles.h1}>Contacts</Text>
-              <Text style={styles.count}>({filtered.length})</Text>
+              <View style={styles.headerRight}>
+                <Text style={styles.count}>({filtered.length})</Text>
+                <Link href="/new-message" asChild>
+                  <Pressable>
+                    <Text style={styles.action}>New</Text>
+                  </Pressable>
+                </Link>
+              </View>
             </View>
             <TextInput
               style={styles.search}
@@ -75,6 +82,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingBottom: 8,
   },
+  headerRight: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
   h1: {
     fontSize: 22,
     fontWeight: "bold",
@@ -82,6 +94,10 @@ const styles = StyleSheet.create({
   },
   count: {
     color: "#888",
+  },
+  action: {
+    color: "#1a5276",
+    fontWeight: "600",
   },
   search: {
     height: 40,
