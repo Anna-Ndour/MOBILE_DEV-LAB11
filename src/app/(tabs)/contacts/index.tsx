@@ -5,14 +5,15 @@ import {
   StyleSheet,
   FlatList,
   TextInput,
+  Pressable,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Link } from "expo-router";
 import { CONTACTS } from "@/data/contacts";
 import { ContactRow } from "@/components/ContactRow";
 
 export default function Contacts() {
   const [query, setQuery] = useState("");
-  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const filtered = useMemo(
     () =>
@@ -28,9 +29,14 @@ export default function Contacts() {
         data={filtered}
         keyExtractor={(c) => c.id}
         renderItem={({ item }) => (
-          <ContactRow
-            contact={item}
-          />
+          <Link
+            href={{ pathname: "/contacts/[id]", params: { id: item.id } }}
+            asChild
+          >
+            <Pressable>
+              <ContactRow contact={item} />
+            </Pressable>
+          </Link>
         )}
         ListHeaderComponent={
           <View>
