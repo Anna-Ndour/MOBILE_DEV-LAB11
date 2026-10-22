@@ -5,35 +5,10 @@ import {
   StyleSheet,
   FlatList,
   TextInput,
-  Pressable,
 } from "react-native";
-import { Image } from "expo-image";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { CONTACTS, Contact } from "../data/contacts";
-
-interface ContactRowProps {
-  contact: Contact;
-  selected?: boolean;
-  onPress?: () => void;
-}
-
-function ContactRow({ contact, selected, onPress }: ContactRowProps) {
-  return (
-    <Pressable
-      onPress={onPress}
-      style={[styles.row, selected && styles.rowSelected]}
-    >
-      <Image
-        source={`https://i.pravatar.cc/100?u=${contact.id}`}
-        style={styles.avatar}
-      />
-      <View style={styles.rowText}>
-        <Text style={styles.name}>{contact.name}</Text>
-        <Text style={styles.program}>{contact.program}</Text>
-      </View>
-    </Pressable>
-  );
-}
+import { CONTACTS } from "@/data/contacts";
+import { ContactRow } from "@/components/ContactRow";
 
 export default function Contacts() {
   const [query, setQuery] = useState("");
@@ -55,8 +30,6 @@ export default function Contacts() {
         renderItem={({ item }) => (
           <ContactRow
             contact={item}
-            selected={item.id === selectedId}
-            onPress={() => setSelectedId(item.id)}
           />
         )}
         ListHeaderComponent={
@@ -120,32 +93,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#888",
     paddingVertical: 32,
-  },
-  row: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-    paddingVertical: 10,
-  },
-  rowSelected: {
-    backgroundColor: "#dbeafe",
-    borderRadius: 8,
-    paddingHorizontal: 8,
-  },
-  avatar: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-  },
-  rowText: {
-    flex: 1,
-  },
-  name: {
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  program: {
-    fontSize: 13,
-    color: "#666",
   },
 });
