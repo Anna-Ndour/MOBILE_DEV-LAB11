@@ -33,7 +33,20 @@
           "imageWidth": 76
         }
       ],
-      "expo-image"
+      "expo-image",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Allow DAUST Messenger to access your camera to take and send photos.",
+          "photosPermission": "Allow DAUST Messenger to access your photo library."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow DAUST Messenger to access your location to share your place."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
